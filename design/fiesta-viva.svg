@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380">
+<rect width="960" height="380" fill="#FFF9F1"/>
+<text x="40" y="65" fill="#292334" font-family="sans-serif" font-size="38" font-weight="700">Fiesta Viva</text>
+<text x="40" y="100" fill="#292334" font-family="sans-serif" font-size="18">Propuesta de tema para La Vida en Fiesta</text>
+<rect x="40" y="140" width="160" height="135" rx="16" fill="#B51F59"/>
+<rect x="220" y="140" width="160" height="135" rx="16" fill="#FF775E"/>
+<rect x="400" y="140" width="160" height="135" rx="16" fill="#FFD75E"/>
+<rect x="580" y="140" width="160" height="135" rx="16" fill="#5BD4C7"/>
+<rect x="760" y="140" width="160" height="135" rx="16" fill="#292334"/>
+<g fill="#292334" font-family="sans-serif" font-size="17">
+<text x="40" y="305">Frambuesa</text><text x="40" y="332">#B51F59</text>
+<text x="220" y="305">Coral</text><text x="220" y="332">#FF775E</text>
+<text x="400" y="305">Amarillo confeti</text><text x="400" y="332">#FFD75E</text>
+<text x="580" y="305">Turquesa</text><text x="580" y="332">#5BD4C7</text>
+<text x="760" y="305">Tinta</text><text x="760" y="332">#292334</text>
+</g>
+</svg>

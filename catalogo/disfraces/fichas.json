@@ -1,0 +1,21 @@
+[
+  {
+    "codigo_archivo": "82643",
+    "nombre": "Disfraz de ninja",
+    "descripcion_corta": "Disfraz de ninja negro con detalles rojos.",
+    "precio": 1635,
+    "moneda": "UYU",
+    "modalidad_talle": "un_talle_por_traje",
+    "talles_disponibles": ["Talle único"],
+    "piezas_incluidas": null,
+    "accesorios_no_incluidos": null,
+    "medidas_por_talle": null,
+    "referencia_observada": {
+      "imagen_original": "C:/Users/59899/Downloads/82643.jpg",
+      "talle_etiqueta": "L",
+      "modelo_empaque": "8060",
+      "nota": "La etiqueta y la presentación del empaque no confirman el stock de talles ni el contenido del paquete."
+    },
+    "estado_confirmacion": "pendiente_del_usuario"
+  }
+]

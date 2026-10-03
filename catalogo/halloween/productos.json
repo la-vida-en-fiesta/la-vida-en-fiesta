@@ -1,0 +1,63 @@
+[
+  {
+    "imagen_original": "80588.jpg",
+    "codigo_archivo": "80588",
+    "codigo_etiqueta": "4800-374",
+    "nombre": "Globo de terror Parca",
+    "precio": 499,
+    "moneda": "UYU",
+    "imagen": "imagenes/80588-globo-parca.png",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null
+  },
+  {
+    "imagen_original": "80589.jpg",
+    "codigo_archivo": "80589",
+    "codigo_etiqueta": "4800-375",
+    "nombre": "Globo de terror Esqueleto",
+    "precio": 299,
+    "moneda": "UYU",
+    "imagen": "imagenes/80589-globo-esqueleto.png",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null
+  },
+  {
+    "imagen_original": "80590.jpg",
+    "codigo_archivo": "80590",
+    "codigo_etiqueta": "4800-245",
+    "nombre": "Globo de terror Momia",
+    "precio": 299,
+    "moneda": "UYU",
+    "imagen": "imagenes/80590-globo-momia.png",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null
+  },
+  {
+    "imagen_original": "80587.jpg",
+    "codigo_archivo": "80587",
+    "codigo_etiqueta": "4800-243",
+    "nombre": "Globo de terror Calabazas con sombrero",
+    "precio": 499,
+    "moneda": "UYU",
+    "imagen": "imagenes/80587-globo-calabazas.png",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null
+  },
+  {
+    "imagen_original": "80674.jpg",
+    "codigo_archivo": "80674",
+    "codigo_etiqueta": "4800-253",
+    "nombre": "Esqueleto colgante",
+    "precio": 399,
+    "moneda": "UYU",
+    "imagen": "imagenes/80674-esqueleto-colgante-detalle.png",
+    "nota": "Vista de detalle, no del producto completo. Solo dos brazos hacia abajo, según corrección explícita del usuario.",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null
+  }
+]

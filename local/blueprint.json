@@ -1,0 +1,26 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; if (!is_file(WP_PLUGIN_DIR . '/woocommerce/woocommerce.php')) { require_once ABSPATH . 'wp-admin/includes/file.php'; require_once ABSPATH . 'wp-admin/includes/plugin-install.php'; require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php'; $api = plugins_api('plugin_information', array('slug'=>'woocommerce','fields'=>array('sections'=>false))); if (is_wp_error($api)) { throw new Exception($api->get_error_message()); } $upgrader = new Plugin_Upgrader(new Automatic_Upgrader_Skin()); $result = $upgrader->install($api->download_link); if (is_wp_error($result)) { throw new Exception($result->get_error_message()); } } require_once ABSPATH . 'wp-admin/includes/plugin.php'; $activation = activate_plugin('woocommerce/woocommerce.php'); if (is_wp_error($activation)) { throw new Exception($activation->get_error_message()); }"
+    },
+    {
+      "step": "setSiteLanguage",
+      "language": "es_ES"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; switch_theme('fiesta-viva'); if (get_option('fiesta_viva_local_initialized')) { return; } update_option('blogname','La Vida en Fiesta'); update_option('blogdescription','Cotillón, disfraces y regalos para celebrar'); update_option('timezone_string','America/Montevideo'); update_option('blog_public',0); update_option('woocommerce_currency','UYU'); update_option('woocommerce_default_country','UY'); update_option('woocommerce_store_address',''); update_option('woocommerce_allow_tracking','no'); update_option('woocommerce_coming_soon','no'); if (class_exists('WC_Install')) { WC_Install::create_pages(); } $home = wp_insert_post(array('post_title'=>'Inicio','post_name'=>'inicio','post_type'=>'page','post_status'=>'publish')); update_option('show_on_front','page'); update_option('page_on_front',$home); $categories = array('cumpleanos'=>'Cumpleaños','baby-shower'=>'Baby shower','despedidas-de-soltera'=>'Despedidas de soltera','disfraces'=>'Disfraces','halloween'=>'Halloween','navidad'=>'Navidad','noche-de-la-nostalgia'=>'Noche de la Nostalgia','perfumeria'=>'Perfumería','regaleria'=>'Regalería','jugueteria'=>'Juguetería','joyeria'=>'Joyería'); foreach ($categories as $slug=>$name) { if (!term_exists($slug,'product_cat')) { wp_insert_term($name,'product_cat',array('slug'=>$slug)); } } update_option('permalink_structure','/%postname%/'); flush_rewrite_rules(); update_option('fiesta_viva_local_initialized',1);"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; if (get_option('fiesta_viva_local_spanish_pages')) { return; } foreach (array('woocommerce_shop_page_id'=>'Catálogo','woocommerce_cart_page_id'=>'Carrito','woocommerce_checkout_page_id'=>'Finalizar compra','woocommerce_myaccount_page_id'=>'Mi cuenta') as $option=>$title) { $id = (int) get_option($option); if ($id) { wp_update_post(array('ID'=>$id,'post_title'=>$title)); } } update_option('fiesta_viva_local_spanish_pages',1);"
+    }
+  ]
+}
