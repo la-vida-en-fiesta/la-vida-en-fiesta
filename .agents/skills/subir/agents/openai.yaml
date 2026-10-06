@@ -1,0 +1,4 @@
+interface:
+  display_name: "subir"
+  short_description: "Revisa, guarda y sube cambios; integra si todo pasa"
+  default_prompt: "Usa $subir para revisar mis cambios de La Vida en Fiesta, hacer commit y push, preparar el PR e integrarlo si las verificaciones pasan."
