@@ -45,4 +45,4 @@ Informa en español: cambios guardados, commit/rama publicada, enlace al PR, com
 
 ## Instalacion
 
-Esta skill viene incluida en `.agents/skills/subir/` dentro del repositorio. Al abrir la carpeta del proyecto en Codex se descubre sin instalacion separada. El instalador `scripts/instalar.ps1` es opcional, solo para quien quiera usarla tambien fuera de este proyecto. En Codex se invoca con `$subir` o desde el selector; una skill no registra por si sola un comando slash `/subir`.
+Esta skill viene incluida en `.agents/skills/subir/` dentro del repositorio. `$descargar` ejecuta automaticamente `scripts/instalar.ps1` para instalarla en `$CODEX_HOME/skills` o `~/.codex/skills`, disponible tambien fuera del proyecto. Si ya existe una instalacion, la conserva. La copia del repositorio tambien se descubre al trabajar en esa carpeta. En Codex se invoca con `$subir` o desde el selector; una skill no registra por si sola un comando slash `/subir`.

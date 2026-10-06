@@ -22,7 +22,7 @@ No borres carpetas existentes, ni uses reset, clean, stash, rebase o push para r
 
 Al terminar, informa si se clono, se actualizo o ya estaba al dia, la ruta absoluta y el commit. Una descarga del codigo no restaura bases de datos locales ni configura por si sola el sitio WordPress.
 
-La copia del repositorio incluye `.agents/skills/subir/`. Indica que Roberto debe abrir la carpeta descargada como proyecto en Codex y ejecutar `$subir` desde un chat de ese proyecto. No necesita instalar subir por separado ni copiarla a su carpeta personal. Las skills del repositorio solo se descubren al trabajar dentro de el; si no aparece tras actualizar, indica que abra un chat nuevo en ese proyecto.
+La copia incluye `.agents/skills/subir/`. Al terminar de clonar o actualizar, el script ejecuta su instalador automaticamente en `$CODEX_HOME/skills` o `~/.codex/skills`. Esta instalacion esta autorizada como parte de descargar. Si subir ya existe, el instalador lo confirma y conserva esa instalacion. Informa el resultado real: Roberto podra usar `$subir` en su siguiente mensaje de Codex, tambien fuera del proyecto; si no aparece, debe reiniciar Codex. Si la instalacion falla, distingue la descarga completada de la skill pendiente y explica el motivo.
 
 ## Instalacion en otro equipo
 

@@ -3,7 +3,7 @@ param([string]$SkillsDirectory)
 $ErrorActionPreference = 'Stop'
 if ([string]::IsNullOrWhiteSpace($SkillsDirectory)) {
     if ($env:CODEX_HOME) { $SkillsDirectory = Join-Path $env:CODEX_HOME 'skills' }
-    else { $SkillsDirectory = Join-Path ([Environment]::GetFolderPath('UserProfile')) '.agents\skills' }
+    else { $SkillsDirectory = Join-Path ([Environment]::GetFolderPath('UserProfile')) '.codex\skills' }
 }
 $source = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $target = [IO.Path]::GetFullPath((Join-Path $SkillsDirectory 'subir'))

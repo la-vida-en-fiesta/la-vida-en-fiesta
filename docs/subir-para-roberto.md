@@ -1,8 +1,8 @@
 # Guardar y subir los cambios desde casa
 
-La skill **ya viene incluida en el repositorio**, en `.agents/skills/subir/`. No necesitas instalarla por separado.
+La skill **ya viene incluida en el repositorio**, en `.agents/skills/subir/`, y **`$descargar` la instala automaticamente en tu carpeta personal de Codex**. No necesitas instalarla por separado.
 
-Ejecuta `$descargar` y abre la carpeta `Documentos\La Vida en Fiesta` como proyecto en Codex. Codex descubrira la skill del repositorio cuando trabajes en esa carpeta. Si acabas de abrir o actualizar el proyecto y no aparece, inicia un chat nuevo dentro de ese proyecto.
+Ejecuta `$descargar` y despues usa `$subir` en tu siguiente mensaje. La skill puede encontrar la copia en `Documentos\La Vida en Fiesta`, aunque el chat se haya abierto fuera de esa carpeta. Si no aparece en el selector de skills, reinicia Codex.
 
 Despues de hacer cambios en el proyecto, escribe **`$subir`**. Codex revisara el codigo y su compatibilidad con lo que ya esta en GitHub, ejecutara comprobaciones pertinentes, hara commit y push y creara o actualizara el PR hacia la rama principal.
 

@@ -3,7 +3,8 @@ param(
     # Estos parametros permiten probar el flujo en repositorios aislados.
     [string]$DocumentsPath = [Environment]::GetFolderPath('MyDocuments'),
     [string]$RepositoryUrl = 'https://github.com/la-vida-en-fiesta/la-vida-en-fiesta.git',
-    [string]$Branch = 'master'
+    [string]$Branch = 'master',
+    [string]$SkillsDirectory
 )
 
 $ErrorActionPreference = 'Stop'
@@ -87,7 +88,14 @@ try {
     $commit = Invoke-ProjectGit -GitArgs @('-C', $destination, 'rev-parse', '--short', 'HEAD')
     Write-Output "Proyecto $state. Carpeta: $destination. Rama: $Branch. Commit: $commit."
     if (Test-Path -LiteralPath (Join-Path $destination '.agents\skills\subir\SKILL.md')) {
-        Write-Output ('La skill subir viene incluida. Abre esta carpeta como proyecto en Codex y usa $subir: ' + $destination)
+        $installSubir = Join-Path $destination '.agents\skills\subir\scripts\instalar.ps1'
+        if (-not (Test-Path -LiteralPath $installSubir -PathType Leaf)) {
+            throw 'El proyecto se descargo, pero falta el instalador de subir. No se completo la instalacion de la skill.'
+        }
+        Write-Output 'Preparando la skill subir en tu carpeta personal de Codex...'
+        if ([string]::IsNullOrWhiteSpace($SkillsDirectory)) { & $installSubir }
+        else { & $installSubir -SkillsDirectory $SkillsDirectory }
+        Write-Output 'Subir ya esta instalada. Usa $subir en tu siguiente mensaje de Codex; si no aparece, reinicia Codex.'
     }
 } catch {
     Write-Error $_.Exception.Message -ErrorAction Continue

@@ -28,9 +28,9 @@ La skill mostrara la carpeta y si se clono, se actualizo o ya estaba al dia. Si 
 
 ## Subir viene incluida
 
-La descarga del repositorio incluye **`.agents/skills/subir/`**. No tienes que instalar esa skill por separado: abre la carpeta descargada `Documentos\La Vida en Fiesta` como proyecto en Codex y usa **`$subir`** desde un chat de ese proyecto. Para dejar solo el PR preparado, usa **`$subir sin merge`**.
+Al terminar de descargar o actualizar, **`$descargar` instala automaticamente la skill `subir` en tu carpeta personal de Codex**. No tienes que instalarla por separado ni abrir primero la carpeta del proyecto para que aparezca. Si ya estaba instalada, la reconoce y conserva esa instalacion.
 
-La skill del repositorio se descubre al trabajar dentro de esa carpeta; no aparece automaticamente en chats de otros proyectos. Si no la ves tras actualizar, abre un chat nuevo dentro del proyecto.
+En tu siguiente mensaje puedes usar **`$subir`**. Para dejar solo el PR preparado, usa **`$subir sin merge`**. Si no aparece en el selector, reinicia Codex. La copia de la skill tambien viene dentro de `.agents/skills/subir/` en el repositorio.
 
 ## Preparacion automatica de la computadora
 
@@ -40,6 +40,7 @@ Al ejecutar `$descargar`, la skill:
 2. Si falta, instala Git for Windows con winget. Si no hay winget, usa el instalador oficial firmado para Windows x64 o ARM64, instalado para tu usuario.
 3. Comprueba el acceso publico a la rama del proyecto sin pedir usuario, contraseña ni token.
 4. Clona en Documentos, o actualiza la copia existente sin borrar tus cambios.
+5. Instala automaticamente `subir` en `$CODEX_HOME/skills` o, si esa variable no existe, en `~/.codex/skills`.
 
 Necesitas conexion a Internet y Codex instalado para ejecutar la skill. Si Windows solicita permisos para instalar Git, debes aceptar el aviso del sistema. Si una politica del equipo impide instalarlo, la skill te informara y se detendra. No configura cuentas de GitHub ni modifica tu nombre o correo de Git.
 
