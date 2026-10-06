@@ -1,0 +1,12 @@
+{
+ "title":"La portada de La Vida en Fiesta",
+ "question":"Fiesta Viva ya está aprobado. Elegí cómo organizar la portada.",
+ "buildPath":{"value":"code","toggle":true},
+ "steer":true,
+ "reroll":true,
+ "options":[
+  {"id":"escaparate","label":"Escaparate de celebraciones","kicker":"THE ROLL","thesis":"Una entrada visual amplia para cumpleaños y disfraces, seguida de las demás ocasiones.","palette":["#FFF9F1","#B51F59","#FF775E","#FFD75E","#5BD4C7"],"materials":["Fiesta Viva","Títulos Fredoka"],"viewport":"Dos accesos de distinto tamaño y un listado claro de temporadas.","risk":"Necesitará buenas fotos para que el escaparate final tenga fuerza.","wireframe":{"cols":12,"rows":10,"regions":[{"label":"Nombre y búsqueda","x":0,"y":0,"w":12,"h":1},{"label":"Cumpleaños","x":0,"y":1,"w":8,"h":5,"accent":true},{"label":"Disfraces","x":8,"y":1,"w":4,"h":5},{"label":"Otras celebraciones","x":0,"y":6,"w":12,"h":2},{"label":"Regalos y complementos","x":0,"y":8,"w":12,"h":2}]}},
+  {"id":"ocasiones","label":"Elegí tu ocasión","thesis":"La portada empieza por lo que se celebra y lleva directamente a esa categoría.","palette":["#FFF9F1","#B51F59","#FF775E","#FFD75E","#5BD4C7"],"materials":["Fiesta Viva","Títulos Fredoka"],"viewport":"Título breve, búsqueda y un directorio de ocasiones con nombres grandes.","risk":"La presentación es más directa y menos fotográfica.","wireframe":{"cols":12,"rows":10,"regions":[{"label":"Nombre y búsqueda","x":0,"y":0,"w":12,"h":1},{"label":"¿Qué celebramos?","x":0,"y":1,"w":12,"h":3,"accent":true},{"label":"Cumpleaños · Baby shower · Despedidas","x":0,"y":4,"w":12,"h":2},{"label":"Disfraces y temporadas","x":0,"y":6,"w":12,"h":2},{"label":"Regalos y complementos","x":0,"y":8,"w":12,"h":2}]}},
+  {"id":"catalogo","label":"Todo a mano","thesis":"Un directorio de categorías permanece a la vista junto a una presentación corta de la tienda.","palette":["#FFF9F1","#B51F59","#FF775E","#FFD75E","#5BD4C7"],"materials":["Fiesta Viva","Títulos Fredoka"],"viewport":"Lista lateral de categorías y espacio amplio para campañas y novedades futuras.","risk":"Hay más información al entrar; en el celular el directorio debe simplificarse.","wireframe":{"cols":12,"rows":10,"regions":[{"label":"Nombre y búsqueda","x":0,"y":0,"w":12,"h":1},{"label":"Categorías","x":0,"y":1,"w":3,"h":7},{"label":"La Vida en Fiesta","x":3,"y":1,"w":9,"h":4,"accent":true},{"label":"Temporadas","x":3,"y":5,"w":9,"h":3},{"label":"Complementos","x":0,"y":8,"w":12,"h":2}]}}
+ ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "la-vida-en-fiesta-local",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Entorno local WordPress y WooCommerce",
+  "scripts": {
+    "dev": "node scripts/start-local.mjs"
+  },
+  "devDependencies": {
+    "@wp-playground/cli": "3.1.56"
+  }
+}

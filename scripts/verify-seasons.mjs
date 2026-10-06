@@ -1,0 +1,14 @@
+import { readFileSync } from 'node:fs';
+import assert from 'node:assert/strict';
+import { PHP } from '@php-wasm/universal';
+import { loadNodeRuntime } from '@php-wasm/node';
+const php = new PHP(await loadNodeRuntime('8.3', {emscriptenOptions:{processId:813}}));
+const source = readFileSync('theme/fiesta-viva/seasons.php', 'utf8').replace(/^<\?php/, '');
+const stubs = "define('ABSPATH','/'); function add_filter(...$args){} function add_action(...$args){} function remove_action(...$args){}";
+const dates = ['2026-07-31','2026-08-01','2026-08-24','2026-08-25','2026-09-30','2026-10-01','2026-10-31','2026-11-01','2026-11-24','2026-11-25','2026-12-25','2026-12-26','2027-10-02'];
+const expected = [null,'noche-de-la-nostalgia','noche-de-la-nostalgia',null,null,'halloween','halloween',null,null,'navidad','navidad',null,'halloween'];
+const response = await php.run({code:'<?php '+stubs+source+' $results=[]; foreach(json_decode(\''+JSON.stringify(dates)+'\') as $d){$s=fiesta_current_season(new DateTimeImmutable($d));$results[]=$s ? $s["slug"] : null;} echo json_encode($results);'});
+assert.equal(response.exitCode,0, response.errors);
+assert.deepEqual(JSON.parse(response.text), expected);
+console.log('13 fechas y límites de campaña correctos; recurrencia anual verificada.');
+php.exit();

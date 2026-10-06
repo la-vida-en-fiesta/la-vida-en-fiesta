@@ -1,0 +1,176 @@
+[
+  {
+    "imagen_original": "80588.jpg",
+    "codigo_archivo": "80588",
+    "codigo_etiqueta": "4800-374",
+    "nombre": "Globo de terror Parca",
+    "precio": 499,
+    "moneda": "UYU",
+    "imagen": "imagenes/80588-globo-parca.png",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null,
+    "categorias": [
+      "halloween"
+    ]
+  },
+  {
+    "imagen_original": "80589.jpg",
+    "codigo_archivo": "80589",
+    "codigo_etiqueta": "4800-375",
+    "nombre": "Globo de terror Esqueleto",
+    "precio": 299,
+    "moneda": "UYU",
+    "imagen": "imagenes/80589-globo-esqueleto.png",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null,
+    "categorias": [
+      "halloween"
+    ]
+  },
+  {
+    "imagen_original": "80590.jpg",
+    "codigo_archivo": "80590",
+    "codigo_etiqueta": "4800-245",
+    "nombre": "Globo de terror Momia",
+    "precio": 299,
+    "moneda": "UYU",
+    "imagen": "imagenes/80590-globo-momia.png",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null,
+    "categorias": [
+      "halloween"
+    ]
+  },
+  {
+    "imagen_original": "80587.jpg",
+    "codigo_archivo": "80587",
+    "codigo_etiqueta": "4800-243",
+    "nombre": "Globo de terror Calabazas con sombrero",
+    "precio": 499,
+    "moneda": "UYU",
+    "imagen": "imagenes/80587-globo-calabazas.png",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null,
+    "categorias": [
+      "halloween"
+    ]
+  },
+  {
+    "imagen_original": "80674.jpg",
+    "codigo_archivo": "80674",
+    "codigo_etiqueta": "4800-253",
+    "nombre": "Esqueleto colgante",
+    "precio": 399,
+    "moneda": "UYU",
+    "imagen": "imagenes/80674-esqueleto-colgante-detalle.png",
+    "nota": "Vista de detalle, no del producto completo. Solo dos brazos hacia abajo, según corrección explícita del usuario.",
+    "categoria": "Halloween",
+    "tipo_imagen": "recreacion_generada",
+    "stock": null,
+    "categorias": [
+      "halloween"
+    ]
+  },
+  {
+    "codigo_archivo": "82643",
+    "nombre": "Disfraz de ninja",
+    "precio": 1635,
+    "imagen": "82643-disfraz-ninja.png",
+    "categorias": [
+      "halloween",
+      "disfraces"
+    ],
+    "descripcion": "Disfraz negro con detalles rojos. Talle de la referencia: L. Accesorios incluidos y disponibilidad por confirmar."
+  },
+  {
+    "codigo_archivo": "fiesta-numero-16",
+    "nombre": "Globo número de 16 pulgadas",
+    "precio": 99,
+    "imagen": "82644-globo-numero-3-dorado.png",
+    "categorias": ["globos", "cumpleanos", "globos-numeros", "cumpleanos-globos-numeros", "globos-numeros-16-pulgadas", "cumpleanos-globos-numeros-16-pulgadas"],
+    "descripcion": "Globo número de 16 pulgadas, aproximadamente 40,6 cm. Dorado y plateado. Imagen de referencia recreada. Disponibilidad por confirmar.",
+    "opciones": {"Color": ["Dorado", "Plateado"], "Número": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]}
+  },
+  {
+    "codigo_archivo": "fiesta-numero-40",
+    "nombre": "Globo número de 40 pulgadas",
+    "precio": 170,
+    "imagen": "82644-globo-numero-3-dorado.png",
+    "categorias": ["globos", "cumpleanos", "globos-numeros", "cumpleanos-globos-numeros", "globos-numeros-40-pulgadas", "cumpleanos-globos-numeros-40-pulgadas"],
+    "descripcion": "Globo número de 40 pulgadas, aproximadamente 101,6 cm. Dorado y plateado. Imagen de referencia recreada. Disponibilidad por confirmar.",
+    "opciones": {"Color": ["Dorado", "Plateado"], "Número": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]}
+  },
+  {
+    "codigo_archivo": "82644",
+    "nombre": "Globo número de 32 pulgadas",
+    "precio": 130,
+    "imagen": "82644-globo-numero-3-dorado.png",
+    "categorias": [
+      "cumpleanos"
+    ],
+    "descripcion": "Todos los números y colores indicados a $130 cada uno. La imagen muestra el 3 dorado. Disponibilidad por confirmar.",
+    "opciones": {
+      "Color": [
+        "Dorado",
+        "Plateado",
+        "Azul",
+        "Verde",
+        "Rojo",
+        "Negro",
+        "Fucsia",
+        "Multicolor",
+        "Rosa oro"
+      ],
+      "Número": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    }
+  },
+  {
+    "codigo_archivo": "82646",
+    "nombre": "Máscara de payaso de terror",
+    "precio": 399,
+    "precio_provisional": true,
+    "imagen": "82646-mascara-payaso.png",
+    "categorias": [
+      "halloween",
+      "disfraces"
+    ],
+    "descripcion": "Máscara de payaso con cabello. Precio provisional de $399, por confirmar."
+  },
+  {
+    "codigo_archivo": "82642",
+    "nombre": "Mantel de fiesta liso",
+    "precio": 169,
+    "imagen": "82642-mantel-negro.png",
+    "categorias": [
+      "cumpleanos",
+      "halloween"
+    ],
+    "descripcion": "Mantel de plástico rectangular liso, 137 × 274 cm. La imagen muestra el negro. Todos los manteles lisos a $169; colores disponibles por confirmar. No incluye mesa."
+  },
+  {
+    "codigo_archivo": "82645",
+    "nombre": "Sorbitos con lunares · 25 unidades",
+    "precio": 99,
+    "imagen": "82645-sorbitos-lunares.png",
+    "categorias": [
+      "cumpleanos"
+    ],
+    "descripcion": "Paquete de 25 sorbitos. Diseño fucsia con lunares blancos de la referencia."
+  }
+]
+ 
