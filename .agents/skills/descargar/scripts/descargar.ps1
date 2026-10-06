@@ -86,6 +86,9 @@ try {
     }
     $commit = Invoke-ProjectGit -GitArgs @('-C', $destination, 'rev-parse', '--short', 'HEAD')
     Write-Output "Proyecto $state. Carpeta: $destination. Rama: $Branch. Commit: $commit."
+    if (Test-Path -LiteralPath (Join-Path $destination '.agents\skills\subir\SKILL.md')) {
+        Write-Output ('La skill subir viene incluida. Abre esta carpeta como proyecto en Codex y usa $subir: ' + $destination)
+    }
 } catch {
     Write-Error $_.Exception.Message -ErrorAction Continue
     exit 1

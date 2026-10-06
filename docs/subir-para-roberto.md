@@ -1,8 +1,8 @@
 # Guardar y subir los cambios desde casa
 
-Instala una vez la skill en Codex:
+La skill **ya viene incluida en el repositorio**, en `.agents/skills/subir/`. No necesitas instalarla por separado.
 
-> Instala con skill-installer la skill de https://github.com/la-vida-en-fiesta/la-vida-en-fiesta/tree/master/.agents/skills/subir
+Ejecuta `$descargar` y abre la carpeta `Documentos\La Vida en Fiesta` como proyecto en Codex. Codex descubrira la skill del repositorio cuando trabajes en esa carpeta. Si acabas de abrir o actualizar el proyecto y no aparece, inicia un chat nuevo dentro de ese proyecto.
 
 Despues de hacer cambios en el proyecto, escribe **`$subir`**. Codex revisara el codigo y su compatibilidad con lo que ya esta en GitHub, ejecutara comprobaciones pertinentes, hara commit y push y creara o actualizara el PR hacia la rama principal.
 

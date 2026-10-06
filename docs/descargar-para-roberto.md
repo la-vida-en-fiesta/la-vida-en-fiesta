@@ -26,6 +26,12 @@ El nombre solicitado es `descargar`; las skills no registran automaticamente un 
 
 La skill mostrara la carpeta y si se clono, se actualizo o ya estaba al dia. Si hay cambios locales, otra rama o commits que requieren revision, se detendra y conservara los archivos. No borra ni reemplaza tu trabajo.
 
+## Subir viene incluida
+
+La descarga del repositorio incluye **`.agents/skills/subir/`**. No tienes que instalar esa skill por separado: abre la carpeta descargada `Documentos\La Vida en Fiesta` como proyecto en Codex y usa **`$subir`** desde un chat de ese proyecto. Para dejar solo el PR preparado, usa **`$subir sin merge`**.
+
+La skill del repositorio se descubre al trabajar dentro de esa carpeta; no aparece automaticamente en chats de otros proyectos. Si no la ves tras actualizar, abre un chat nuevo dentro del proyecto.
+
 ## Preparacion automatica de la computadora
 
 Al ejecutar `$descargar`, la skill:
