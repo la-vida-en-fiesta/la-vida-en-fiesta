@@ -24,10 +24,10 @@ La primera ejecución descarga WordPress, la integración SQLite y WooCommerce; 
 - Identidad aprobada: `design/fiesta-viva.md`.
 - Contexto del negocio: `PRODUCT.md`.
 
-El catálogo comienza vacío, con las categorías de la tienda. No hay precios, productos ni stock inventados. Hayden, pagos y envíos siguen pendientes de integración. El entorno local usa SQLite y PHP WebAssembly: antes de publicar hay que validar WordPress y WooCommerce con PHP y MySQL/MariaDB reales, además de probar pagos, notificaciones y sincronización de stock.
+El catálogo incluye globos números de 16, 32 y 40 pulgadas, con colores, cantidades, imágenes de referencia y precios aportados por el local. Incluye carrito, páginas de información y prueba local de pedidos. Hayden, pagos y envíos siguen pendientes de integración. El entorno local usa SQLite y PHP WebAssembly: antes de publicar hay que validar WordPress y WooCommerce con PHP y MySQL/MariaDB reales, además de probar pagos, notificaciones y sincronización de stock.
 
 ## GitHub
 
 Repositorio creado: https://github.com/la-vida-en-fiesta/la-vida-en-fiesta
 
-Los archivos locales aún no se han subido. No subir `.local`, bases de datos, archivos de configuración privada ni credenciales.
+No subir `.local`, bases de datos, archivos de configuración privada ni credenciales.
