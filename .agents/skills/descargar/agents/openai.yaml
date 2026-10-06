@@ -1,0 +1,4 @@
+interface:
+  display_name: "descargar"
+  short_description: "Descarga o actualiza La Vida en Fiesta en Documentos"
+  default_prompt: "Usa $descargar para descargar o actualizar La Vida en Fiesta en Documentos."
