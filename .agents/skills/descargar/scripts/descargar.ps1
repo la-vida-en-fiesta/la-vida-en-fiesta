@@ -8,14 +8,22 @@ param(
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
+. (Join-Path $PSScriptRoot 'preparar-git.ps1')
 
 function Invoke-ProjectGit {
     param([string[]]$GitArgs)
-    $result = & $script:gitExecutable @GitArgs
-    if ($LASTEXITCODE -ne 0) {
-        throw "Git no pudo completar la operacion (codigo $LASTEXITCODE). Revisa la conexion y el acceso al repositorio antes de volver a intentar."
+    $previousPrompt = $env:GIT_TERMINAL_PROMPT
+    try {
+        $env:GIT_TERMINAL_PROMPT = '0'
+        # El proyecto es publico: no usar credenciales guardadas ni pedir login.
+        $result = & $script:gitExecutable -c credential.helper= -c core.askPass= -c credential.interactive=never @GitArgs
+        if ($LASTEXITCODE -ne 0) {
+            throw "Git no pudo completar la operacion (codigo $LASTEXITCODE). Revisa la conexion, la rama y que el repositorio siga siendo publico. Esta skill no solicita una cuenta de GitHub."
+        }
+        return $result
+    } finally {
+        $env:GIT_TERMINAL_PROMPT = $previousPrompt
     }
-    return $result
 }
 
 function Get-RepositoryIdentity {
@@ -27,7 +35,7 @@ function Get-RepositoryIdentity {
 }
 
 try {
-    $script:gitExecutable = (Get-Command git -ErrorAction Stop).Source
+    $script:gitExecutable = Ensure-ProjectGit
     if ([string]::IsNullOrWhiteSpace($DocumentsPath)) {
         throw 'Windows no pudo localizar Documentos. No se creo ninguna carpeta.'
     }
@@ -35,6 +43,8 @@ try {
     $destination = Join-Path $documents 'La Vida en Fiesta'
 
     if (-not (Test-Path -LiteralPath $destination)) {
+        Write-Output 'Comprobando acceso al repositorio sin iniciar sesion en GitHub...'
+        Invoke-ProjectGit -GitArgs @('ls-remote', '--exit-code', '--', $RepositoryUrl, "refs/heads/$Branch") | Out-Null
         New-Item -ItemType Directory -Path $documents -Force | Out-Null
         Write-Output "Descargando La Vida en Fiesta en: $destination"
         Invoke-ProjectGit -GitArgs @('clone', '--branch', $Branch, '--single-branch', '--', $RepositoryUrl, $destination) | Out-Host
