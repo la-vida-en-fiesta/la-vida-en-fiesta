@@ -1,6 +1,10 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 require_once __DIR__ . '/seasons.php';
+require_once __DIR__ . '/about.php';
+require_once __DIR__ . '/how-to-buy.php';
+require_once __DIR__ . '/catalog-navigation.php';
+require_once __DIR__ . '/balloon-picker.php';
 function fiesta_arrow_svg() {
     return '<svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg>';
 }
@@ -26,6 +30,7 @@ add_action('after_setup_theme', function () {
 });
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('fiesta-viva', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
+    wp_enqueue_script('fiesta-navigation', get_template_directory_uri() . '/assets/navigation.js', array(), filemtime(__DIR__ . '/assets/navigation.js'), true);
 });
 require_once __DIR__ . '/local-checkout.php';
 add_filter('woocommerce_available_payment_gateways', function ($gateways) {

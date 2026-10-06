@@ -5,7 +5,7 @@ add_action('init', function () {
     $file = __DIR__ . '/assets/catalogo/productos.json';
     if (!is_file($file)) { return; }
     $raw = ltrim(file_get_contents($file), "\xEF\xBB\xBF");
-    $hash = hash('sha256', 'variants-v1:' . $raw);
+    $hash = hash('sha256', 'variants-v2:' . $raw);
     if (get_option('fiesta_catalog_hash') === $hash) { return; }
     $items = json_decode($raw, true);
     if (!is_array($items)) { return; }
@@ -14,7 +14,7 @@ add_action('init', function () {
     update_option('woocommerce_price_decimal_sep', ',');
     foreach ($items as $item) {
         $matches = get_posts(array('post_type'=>'product', 'post_status'=>'any', 'numberposts'=>1, 'meta_key'=>'_fiesta_reference', 'meta_value'=>$item['codigo_archivo']));
-        $variable = $item['codigo_archivo'] === '82644';
+        $variable = !empty($item['opciones']['Número']) && !empty($item['opciones']['Color']);
         $product = $variable ? new WC_Product_Variable($matches ? $matches[0]->ID : 0) : ($matches ? wc_get_product($matches[0]->ID) : new WC_Product_Simple());
         $product->set_name($item['nombre']);
         $product->set_status('publish');
@@ -22,7 +22,23 @@ add_action('init', function () {
         $product->set_manage_stock(false);
         $product->set_short_description($item['descripcion'] ?? '');
         $categories = array();
-        foreach ($item['categorias'] as $slug) {
+        $catalog_categories = $item['categorias'];
+        if ($item['codigo_archivo'] === '82644') {
+            $catalog_categories[] = 'cumpleanos-globos-numeros-32-pulgadas';
+            $catalog_categories[] = 'globos-numeros-32-pulgadas';
+        }
+        $birthday_category = fiesta_birthday_product_category($item['codigo_archivo']);
+        if ($birthday_category) { $catalog_categories[] = $birthday_category; }
+        $decoration_category = fiesta_decoration_product_category($item['codigo_archivo']);
+        if ($decoration_category) {
+            $catalog_categories[] = 'decoracion';
+            $catalog_categories[] = $decoration_category;
+        }
+        if ($birthday_category && strpos($birthday_category, 'cumpleanos-globos-') === 0) {
+            $catalog_categories[] = 'globos';
+            $catalog_categories[] = substr($birthday_category, strlen('cumpleanos-'));
+        }
+        foreach ($catalog_categories as $slug) {
             $term = get_term_by('slug', $slug, 'product_cat');
             if ($term) { $categories[] = $term->term_id; }
         }

@@ -87,6 +87,24 @@
     "descripcion": "Disfraz negro con detalles rojos. Talle de la referencia: L. Accesorios incluidos y disponibilidad por confirmar."
   },
   {
+    "codigo_archivo": "fiesta-numero-16",
+    "nombre": "Globo número de 16 pulgadas",
+    "precio": 99,
+    "imagen": "82644-globo-numero-3-dorado.png",
+    "categorias": ["globos", "cumpleanos", "globos-numeros", "cumpleanos-globos-numeros", "globos-numeros-16-pulgadas", "cumpleanos-globos-numeros-16-pulgadas"],
+    "descripcion": "Globo número de 16 pulgadas, aproximadamente 40,6 cm. Dorado y plateado. Imagen de referencia recreada. Disponibilidad por confirmar.",
+    "opciones": {"Color": ["Dorado", "Plateado"], "Número": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]}
+  },
+  {
+    "codigo_archivo": "fiesta-numero-40",
+    "nombre": "Globo número de 40 pulgadas",
+    "precio": 170,
+    "imagen": "82644-globo-numero-3-dorado.png",
+    "categorias": ["globos", "cumpleanos", "globos-numeros", "cumpleanos-globos-numeros", "globos-numeros-40-pulgadas", "cumpleanos-globos-numeros-40-pulgadas"],
+    "descripcion": "Globo número de 40 pulgadas, aproximadamente 101,6 cm. Dorado y plateado. Imagen de referencia recreada. Disponibilidad por confirmar.",
+    "opciones": {"Color": ["Dorado", "Plateado"], "Número": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]}
+  },
+  {
     "codigo_archivo": "82644",
     "nombre": "Globo número de 32 pulgadas",
     "precio": 130,

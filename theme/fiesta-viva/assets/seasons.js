@@ -8,17 +8,59 @@
   const storedEffects = read('fiesta-effects-paused');
   let paused = storedEffects === 'yes' || (storedEffects !== 'no' && reduced.matches);
   let motionOptIn = storedEffects === 'no';
+  const witch = document.querySelector('.flying-witch');
+  let flight = null, flightTimer = null;
+  const random = (min, max) => min + Math.random() * (max - min);
+  const fly = () => {
+    if (!witch || paused || document.hidden) return;
+    const reverse = Math.random() < .5;
+    const width = window.innerWidth, height = window.innerHeight;
+    const size = witch.getBoundingClientRect().width;
+    const start = reverse ? width + size : -size * 2;
+    const end = reverse ? -size * 2 : width + size;
+    const duration = random(7000, 13000);
+    const baseline = random(height * .18, height * .68);
+    const amplitude = random(20, Math.min(80, height * .1));
+    const waves = random(1.5, 3.5), phase = random(0, Math.PI * 2);
+    witch.dataset.direction = reverse ? 'left' : 'right';
+    witch.style.setProperty('--witch-direction', reverse ? '-1' : '1');
+    const frames = Array.from({length: 61}, (_, index) => {
+      const t = index / 60;
+      const y = baseline + Math.sin(t * Math.PI * 2 * waves + phase) * amplitude;
+      return {transform: `translate3d(${start + (end - start) * t}px,${y}px,0)`, opacity: index === 0 || index === 60 ? 0 : .55, offset: t};
+    });
+    flight = witch.animate(frames, {duration, easing: 'linear'});
+    flight.onfinish = () => { flight = null; flightTimer = setTimeout(fly, random(2500, 9000)); };
+  };
+  const syncFlight = () => {
+    clearTimeout(flightTimer); flightTimer = null;
+    if (paused) { flight?.cancel(); flight = null; }
+    else if (document.hidden) flight?.pause();
+    else if (flight) flight.play();
+    else flightTimer = setTimeout(fly, random(500, 2000));
+  };
+  const garland = document.querySelector('.pumpkin-garland');
+  if (garland) {
+    const fitGarland = () => {
+      const count = Math.max(1, Math.round(garland.clientWidth / (window.innerWidth <= 700 ? 110 : 140)));
+      if (garland.childElementCount === count) return;
+      garland.replaceChildren(...Array.from({length:count}, () => document.createElement('span')));
+    };
+    fitGarland();
+    new ResizeObserver(fitGarland).observe(garland);
+  }
   const syncEffects = () => {
     body.classList.toggle('effects-paused', paused);
     body.classList.toggle('motion-opt-in', motionOptIn && !paused);
     if (toggle) { toggle.textContent = paused ? 'Activar efectos' : 'Pausar efectos'; toggle.setAttribute('aria-pressed', String(paused)); }
+    syncFlight();
   };
   if (toggle) {
     toggle.hidden = false;
     toggle.addEventListener('click', () => { paused = !paused; motionOptIn = !paused; write('fiesta-effects-paused', paused ? 'yes' : 'no'); syncEffects(); });
   }
   syncEffects();
-  document.addEventListener('visibilitychange', () => body.classList.toggle('tab-hidden', document.hidden));
+  document.addEventListener('visibilitychange', () => { body.classList.toggle('tab-hidden', document.hidden); syncFlight(); });
   reduced.addEventListener('change', event => { if (event.matches) { paused = true; motionOptIn = false; syncEffects(); } });
   const intro = document.querySelector('#halloween-intro');
   if (!intro || typeof intro.showModal !== 'function') return;

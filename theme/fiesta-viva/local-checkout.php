@@ -1,4 +1,5 @@
 <?php
+add_filter('woocommerce_return_to_shop_text', function () { return 'Seguir comprando'; });
 function fiesta_local_checkout_enabled() {
     return wp_get_environment_type() === 'local' && get_option('fiesta_local_checkout_enabled') === 'yes';
 }

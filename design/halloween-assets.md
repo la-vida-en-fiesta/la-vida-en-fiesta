@@ -42,3 +42,5 @@ La intro vive sólo en portada, una vez por sesión, y no al entrar directamente
 Respeta movimiento reducido por defecto; los efectos pueden activarse voluntariamente desde el control. Pausa de efectos se conserva durante la sesión. Las animaciones se suspenden con pestaña oculta. No se aplican animaciones de entrada al catálogo ni al pago.
 
 
+
+Guirnalda ajustada al ancho del campo de búsqueda: curvas completas distribuidas según el ancho disponible, recalculadas al redimensionar. La brujita sortea dirección, altura, amplitud, ondas, duración y espera en cada vuelo; invierte su orientación y conserva las cerdas atrás. Los vuelos respetan pausa de efectos, movimiento reducido y pestaña oculta.
